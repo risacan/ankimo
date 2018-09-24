@@ -1,5 +1,7 @@
 # ankimo
 
+ブキのサブとスペシャルを覚える
+
 > A Vue.js project
 
 ## Build Setup
