@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <p> --- ↓ routingされてるページ --- </p>
     <router-view/>
+    <p> --- ↑ routingされてるページ --- </p>
   </div>
 </template>
 
