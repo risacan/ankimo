@@ -1,15 +1,12 @@
 <template>
   <div class='buki'>
     🌟{{title}}🌟
-    <ul id='example-1'>
-      <li v-for='item in data.main' :key="item.key">
-        {{ item.key }}: {{item.localization.ja}}
-        <ul>
-          <li>{{data.sub[item.sub_key].localization.ja}}</li>
-          <li>{{data.special[item.special_key].localization.ja}}</li>
-        </ul>
-      </li>
-    </ul>
+    <div id='example-1' class="">
+      <div v-for='item in data.main' :key="item.key" class="column">
+        <h1 class="title">{{item.localization.ja}}</h1>
+        <SelectButton />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,6 +14,8 @@
 import Main from '../../static/main.json'
 import Sub from '../../static/sub.json'
 import Special from '../../static/special.json'
+import SelectButton from './SelectButton'
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -26,10 +25,12 @@ export default {
       data: {
         main: Main,
         sub: Sub,
-        special: Special
+        special: Special,
+        subs: Object.keys(Sub).map(name => Sub[name].localization.ja)
       }
     }
-  }
+  },
+  components: { SelectButton }
 }
 </script>
 
