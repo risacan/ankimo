@@ -1,6 +1,6 @@
 <template>
   <div class='select-button'>
-    {{selectedSub}}
+    {{selectedSub}} {{ selectedSpecial }}
     <div class="control" v-for='item in data.sub' v-bind:key="item">
       <input
         type="radio"
@@ -8,8 +8,19 @@
         v-bind:value="item"
         v-model="selectedSub"
       >
-      <label class="radio" v-bind:for="item" v-bind:class="{ tag: onChange(buki, item, selectedSub)}">
+      <label class="radio" v-bind:for="item" v-bind:class="{ tag: onChangeSub(buki, item, selectedSub)}">
         {{data.allSub[item].localization.ja}}
+      </label>
+    </div>
+    <div class="control" v-for='item in data.special' v-bind:key="item">
+      <input
+        type="radio"
+        v-bind:name="item"
+        v-bind:value="item"
+        v-model="selectedSpecial"
+      >
+      <label class="radio" v-bind:for="item" v-bind:class="{ tag: onChangeSpecial(buki, item, selectedSpecial)}">
+        {{data.allSpecial[item].localization.ja}}
       </label>
     </div>
   </div>
@@ -18,6 +29,7 @@
 <script>
 import Main from '../../static/main.json'
 import Sub from '../../static/sub.json'
+import Special from '../../static/special.json'
 
 export default {
   name: 'SelectButton',
@@ -28,15 +40,21 @@ export default {
       data: {
         main: Main,
         allSub: Sub,
-        sub: Object.keys(Sub)
+        allSpecial: Special,
+        sub: Object.keys(Sub),
+        special: Object.keys(Special)
       },
-      selectedSub: 'first'
+      selectedSub: '🦑',
+      selectedSpecial: '🐙'
     }
   },
   props: ['buki'],
   methods: {
-    onChange: function (buki, item, selectedSub) {
+    onChangeSub: function (buki, item, selectedSub) {
       return (selectedSub === item && selectedSub === Main[buki].sub_key)
+    },
+    onChangeSpecial: function (buki, item, selectedSpecial) {
+      return (selectedSpecial === item && selectedSpecial === Main[buki].special_key)
     }
   }
 }
