@@ -1,6 +1,6 @@
 <template>
   <div class='select-button'>
-          {{selectedSub}}
+    {{selectedSub}}
     <div class="control" v-for='item in data.sub' v-bind:key="item">
       <input
         type="radio"
