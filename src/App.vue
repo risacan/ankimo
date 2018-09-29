@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <p> --- ↓ routingされてるページ --- </p>
+    <h1>🐟アンキモ🐟</h1>
     <router-view/>
-    <p> --- ↑ routingされてるページ --- </p>
   </div>
 </template>
 
