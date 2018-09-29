@@ -8,7 +8,7 @@
         v-bind:value="item"
         v-model="update"
       >
-      <label class="radio" v-bind:for="item" v-bind:class="{ tag: update === item && update === data.main[buki].sub_key }">
+      <label class="radio" v-bind:for="item" v-bind:class="{ tag: onChange(buki, item, update)}">
         {{data.allSub[item].localization.ja}}
       </label>
     </div>
@@ -35,11 +35,8 @@ export default {
   },
   props: ['buki'],
   methods: {
-    onChange: function (buki, event) {
-      console.log(buki)
-      console.log(event.target.value)
-      console.log(event.target.value === Main[buki].sub_key)
-      console.log(event.target)
+    onChange: function (buki, item, update) {
+      return (update === item && update === Main[buki].sub_key)
     }
   }
 }
