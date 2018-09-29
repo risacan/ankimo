@@ -16,14 +16,27 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       title: 'hoge',
       data: {
+        allSub: Sub,
         sub: Object.keys(Sub)
       }
     }
   },
-  props: ['selected']
+  props: ['buki'],
+  methods: {
+    check: function (buki, item) {
+      if (item === Main[buki].sub_key) {
+        console.log('🎉' + item)
+      } else {
+        console.log('😭' + item)
+      }
+    }
+  }
 }
 </script>
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
+.button {
+  min-width: 200px;
+}
 </style>
