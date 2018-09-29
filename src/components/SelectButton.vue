@@ -1,14 +1,14 @@
 <template>
   <div class='select-button'>
-          {{update}}
+          {{selectedSub}}
     <div class="control" v-for='item in data.sub' v-bind:key="item">
       <input
         type="radio"
         v-bind:name="item"
         v-bind:value="item"
-        v-model="update"
+        v-model="selectedSub"
       >
-      <label class="radio" v-bind:for="item" v-bind:class="{ tag: onChange(buki, item, update)}">
+      <label class="radio" v-bind:for="item" v-bind:class="{ tag: onChange(buki, item, selectedSub)}">
         {{data.allSub[item].localization.ja}}
       </label>
     </div>
@@ -30,13 +30,13 @@ export default {
         allSub: Sub,
         sub: Object.keys(Sub)
       },
-      update: 'first'
+      selectedSub: 'first'
     }
   },
   props: ['buki'],
   methods: {
-    onChange: function (buki, item, update) {
-      return (update === item && update === Main[buki].sub_key)
+    onChange: function (buki, item, selectedSub) {
+      return (selectedSub === item && selectedSub === Main[buki].sub_key)
     }
   }
 }
