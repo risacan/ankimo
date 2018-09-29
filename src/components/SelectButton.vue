@@ -1,7 +1,16 @@
 <template>
   <div class='select-button'>
-    <div v-for='item in data.sub' :key="item">
-      <a class="button is-medium is-outlined" v-on:click="check(buki, item)" >{{data.allSub[item].localization.ja}}</a>
+          {{update}}
+    <div class="control" v-for='item in data.sub' v-bind:key="item">
+      <input
+        type="radio"
+        v-bind:name="item"
+        v-bind:value="item"
+        v-model="update"
+      >
+      <label class="radio" v-bind:for="item" v-bind:class="{ tag: update === item && update === data.main[buki].sub_key }">
+        {{data.allSub[item].localization.ja}}
+      </label>
     </div>
   </div>
 </template>
@@ -17,19 +26,20 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       title: 'hoge',
       data: {
+        main: Main,
         allSub: Sub,
         sub: Object.keys(Sub)
-      }
+      },
+      update: 'first'
     }
   },
   props: ['buki'],
   methods: {
-    check: function (buki, item) {
-      if (item === Main[buki].sub_key) {
-        console.log('🎉' + item)
-      } else {
-        console.log('😭' + item)
-      }
+    onChange: function (buki, event) {
+      console.log(buki)
+      console.log(event.target.value)
+      console.log(event.target.value === Main[buki].sub_key)
+      console.log(event.target)
     }
   }
 }
