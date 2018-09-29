@@ -1,12 +1,13 @@
 <template>
   <div class='select-button'>
     <div v-for='item in data.sub' :key="item">
-      <a class="button is-medium is-outlined">{{item}}</a>
+      <a class="button is-medium is-outlined" v-on:click="check(buki, item)" >{{data.allSub[item].localization.ja}}</a>
     </div>
   </div>
 </template>
 
 <script>
+import Main from '../../static/main.json'
 import Sub from '../../static/sub.json'
 
 export default {
