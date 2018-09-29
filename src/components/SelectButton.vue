@@ -39,6 +39,9 @@
         </div>
       </div>
     </div>
+    <audio id="sound-file1" preload="auto">
+      <source src="@/assets/mens-ou1.mp3" type="audio/mp3">
+    </audio>
   </div>
 </template>
 
@@ -67,10 +70,18 @@ export default {
   props: ['buki'],
   methods: {
     onChangeSub: function (buki, item, selectedSub) {
-      return (selectedSub === item && selectedSub === Main[buki].sub_key)
+      var resultSub = (selectedSub === item && selectedSub === Main[buki].sub_key)
+      if (resultSub === true) {
+        document.getElementById('sound-file1').play()
+      }
+      return resultSub
     },
     onChangeSpecial: function (buki, item, selectedSpecial) {
-      return (selectedSpecial === item && selectedSpecial === Main[buki].special_key)
+      var resultSpecial = (selectedSpecial === item && selectedSpecial === Main[buki].special_key)
+      if (resultSpecial === true) {
+        document.getElementById('sound-file1').play()
+      }
+      return resultSpecial
     }
   }
 }
