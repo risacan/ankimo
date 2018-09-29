@@ -11,9 +11,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 @import url("./assets/bulma.css");
+
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -21,9 +24,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-
 h1 {
   font-size: 30px;
 }
