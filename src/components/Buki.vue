@@ -1,10 +1,9 @@
 <template>
   <div class='buki'>
-    🌟{{title}}🌟
-    <div id='example-1' class="">
-      <div v-for='item in data.main' :key="item.key" class="column">
-        <h1 class="title">{{item.localization.ja}}</h1>
-        <SelectButton />
+    <div id='example-1' class="columns is-multiline">
+      <div v-for='item in data.main' :key="item.key" class="column is-half">
+        <h2 class="title">{{item.localization.ja}}</h2>
+        <SelectButton v-bind:buki="item.key" />
       </div>
     </div>
   </div>
