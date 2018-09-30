@@ -41,9 +41,7 @@
         </div>
       </div>
     </div>
-    <audio id="sound-file1" preload="auto">
-      <source src="@/assets/mens-ou1.mp3" type="audio/mp3">
-    </audio>
+    <!-- <audio id="sound-file1" preload="auto"><source src="@/assets/mens-ou1.mp3" type="audio/mp3"></audio> -->
   </div>
 </template>
 
@@ -65,24 +63,24 @@ export default {
         sub: Object.keys(Sub),
         special: Object.keys(Special)
       },
-      selectedSub: '🦑',
-      selectedSpecial: '🐙'
+      selectedSub: '',
+      selectedSpecial: ''
     }
   },
   props: ['buki'],
   methods: {
     onChangeSub: function (buki, item, selectedSub) {
       var resultSub = (selectedSub === item && selectedSub === Main[buki].sub_key)
-      if (resultSub === true) {
-        document.getElementById('sound-file1').play()
-      }
+      // if (resultSub === true) {
+      // document.getElementById('sound-file1').play()
+      // }
       return resultSub
     },
     onChangeSpecial: function (buki, item, selectedSpecial) {
       var resultSpecial = (selectedSpecial === item && selectedSpecial === Main[buki].special_key)
-      if (resultSpecial === true) {
-        document.getElementById('sound-file1').play()
-      }
+      // if (resultSpecial === true) {
+      // document.getElementById('sound-file1').play()
+      // }
       return resultSpecial
     }
   }
