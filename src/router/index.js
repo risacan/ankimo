@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Buki from '@/components/Buki'
 
 Vue.use(Router)
@@ -10,11 +9,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/buki',
       name: 'Buki',
       component: Buki
     }
