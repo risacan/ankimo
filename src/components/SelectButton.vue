@@ -2,7 +2,9 @@
   <div class='select-button'>
     <div class="columns">
       <div class="column">
-        <div class="column is-full">{{selectedSub}} {{ selectedSpecial }}</div>
+        <div class="column is-full">
+          {{selectedSub ? data.allSub[selectedSub].localization.ja : '🦑'}}
+          {{selectedSpecial ? data.allSpecial[selectedSpecial].localization.ja : '🐙'}}</div>
       </div>
     </div>
     <div class="columns">
