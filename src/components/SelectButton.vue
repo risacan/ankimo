@@ -18,7 +18,7 @@
             v-model="selectedSub"
             class="is-checkradio has-background-color"
           >
-          <label class="radio" v-bind:for="buki+item" v-bind:class="{ tag: onChangeSub(buki, item, selectedSub)}">
+          <label class="radio" v-bind:for="buki+item" v-bind:class="{ tag: onChangeSub(buki, item, selectedSub) }">
             {{data.allSub[item].localization.ja}}
           </label>
         </div>
