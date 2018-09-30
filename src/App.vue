@@ -12,11 +12,17 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+$primary: $green;
+$light: $red;
+$danger: $red;
 
 @import url("./assets/bulma.css");
-
 @import "../node_modules/bulma/bulma.sass";
 @import "../node_modules/bulma-extensions/bulma-checkradio/dist/css/bulma-checkradio.sass";
+
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
