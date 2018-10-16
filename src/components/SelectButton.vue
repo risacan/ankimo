@@ -4,7 +4,7 @@
       <div class="column">
         <div class="column is-full">
           {{selectedSub ? data.allSub[selectedSub].localization.ja : '🦑'}}
-          {{selectedSpecial ? data.allSpecial[selectedSpecial].localization.ja : '🦑'}}</div>
+          {{selectedSpecial ? data.allSpecial[selectedSpecial].localization.ja : '🐵'}}</div>
       </div>
     </div>
     <div class="columns">
