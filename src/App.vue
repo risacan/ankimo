@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>🐟アンキモ🐟</h1>
+    <h1>🦑アンキモ🦑</h1>
     <router-view/>
   </div>
 </template>
